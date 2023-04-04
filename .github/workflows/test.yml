@@ -42,6 +42,8 @@ jobs:
           pip install opencv-python opencv-contrib-python-headless httpx replicate
           # try fix issue with importlib_resources
           pip install importlib-resources
+      - name: Ensure Matplotlib font cache is up to date
+        run: python -c "import matplotlib.pyplot as plt; plt.figure()"
       - name: test startup
         run: ./test_startup.sh
         shell: bash
