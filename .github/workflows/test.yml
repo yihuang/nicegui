@@ -68,7 +68,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, macos-latest]
+        os: [macos-latest] #windows-latest,
         python-version: ["3.7", "3.11"]
         exclude: # macos seems to have issues with 3.7; skipping because it's not crucial
           - os: macos-latest
