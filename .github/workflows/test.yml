@@ -47,6 +47,8 @@ jobs:
       - name: test startup
         run: ./test_startup.sh
         shell: bash
+        env:
+          OPENCV_VIDEOIO_PRIORITY_MSMF: "0" # hide camera device errors from output on windows
       - name: setup chromedriver
         uses: nanasess/setup-chromedriver@v1
       - name: pytest
