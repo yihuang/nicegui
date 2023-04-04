@@ -37,6 +37,5 @@ do
     elif test -f $path/main.py; then
         check $path/main.py || error=1
     fi
-    pkill -f 'Safari' # ensure no old browser tabs keep requesting pages from previous tests (seems to be a osx github action only issue)
 done
 test $error -eq 0
