@@ -29,7 +29,7 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           echo "C:\Program Files\Git\bin\bash.exe" > $GITHUB_PATH
-          shell: bash
+        shell: bash
       - name: set up Poetry
         uses: abatilo/actions-poetry@v2.0.0
         with:
@@ -44,10 +44,12 @@ jobs:
           pip install importlib-resources
       - name: test startup
         run: ./test_startup.sh
+        shell: bash
       - name: setup chromedriver
         uses: nanasess/setup-chromedriver@v1
       - name: pytest
         run: pytest
+        shell: bash
       - name: upload screenshots
         uses: actions/upload-artifact@v2
         env:
