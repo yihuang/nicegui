@@ -320,26 +320,6 @@ class Element(Visibility):
             Tooltip(text)
         return self
 
-    @overload
-    def on(self,
-           type: str,  # pylint: disable=redefined-builtin
-           *,
-           js_handler: Optional[str] = None,
-           ) -> Self:
-        ...
-
-    @overload
-    def on(self,
-           type: str,  # pylint: disable=redefined-builtin
-           handler: Optional[events.Handler[events.GenericEventArguments]] = None,
-           args: Union[None, Sequence[str], Sequence[Optional[Sequence[str]]]] = None,
-           *,
-           throttle: float = 0.0,
-           leading_events: bool = True,
-           trailing_events: bool = True,
-           ) -> Self:
-        ...
-
     def on(self,
            type: str,  # pylint: disable=redefined-builtin
            handler: Optional[events.Handler[events.GenericEventArguments]] = None,
