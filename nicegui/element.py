@@ -360,9 +360,6 @@ class Element(Visibility):
         :param trailing_events: whether to trigger the event handler after the last event occurrence (default: `True`)
         :param js_handler: JavaScript code that is executed upon occurrence of the event, e.g. `(evt) => alert(evt)` (default: `None`)
         """
-        if handler and js_handler:
-            raise ValueError('Either handler or js_handler can be specified, but not both')
-
         if handler or js_handler:
             listener = EventListener(
                 element_id=self.id,
